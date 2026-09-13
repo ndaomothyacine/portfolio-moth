@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planification des soutenances · Moth Yacine NDAO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --bg-alt:#F7F8FB;
+    --ink:#12172B;
+    --ink-soft:#5B6178;
+    --blue:#2F56D9;
+    --blue-dark:#1E2A5A;
+    --blue-soft:#E8EDFC;
+    --line:#E7E8EF;
+    --max:1100px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Inter', sans-serif; line-height:1.6;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  .accent{color:var(--blue);}
+
+  .topbar{padding:24px 0;}
+  .back-link{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:600; font-size:0.92rem; color:var(--ink-soft);
+  }
+  .back-link:hover{color:var(--blue);}
+
+  .title-block{padding:8px 0 32px;}
+  .title-block h1{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; max-width:22ch;}
+  .badges{display:flex; gap:12px; align-items:center; margin-top:18px; flex-wrap:wrap;}
+  .badge{
+    background:var(--blue); color:#fff; font-weight:700; font-size:0.82rem;
+    padding:7px 16px; border-radius:999px;
+  }
+  .domain{color:var(--ink-soft); font-size:0.9rem;}
+
+  .grid-2{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px;
+    padding:32px 0 56px; border-top:1px solid var(--line);
+  }
+  @media (max-width:760px){ .grid-2{grid-template-columns:1fr;} }
+  .grid-2 h2{font-size:1.25rem; font-weight:800; margin-bottom:14px;}
+  .grid-2 p{color:var(--ink-soft); margin:0;}
+
+  .steps-visual{
+    background:var(--bg-alt);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:24px;
+  }
+  .step-row{
+    display:flex; align-items:center; gap:12px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.88rem;
+  }
+  .step-row:last-child{border-bottom:none;}
+  .step-num{
+    width:26px; height:26px; border-radius:50%;
+    background:var(--blue); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.78rem; font-weight:700; flex-shrink:0;
+  }
+  .cta-row{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:10px;
+    font-weight:700; font-size:0.9rem;
+  }
+  .btn-primary{background:var(--blue-dark); color:#fff;}
+  .btn-ghost{border:1px solid var(--line); color:var(--ink);}
+
+  .details-section{background:var(--bg-alt); padding:56px 0;}
+  .details-section h2{font-size:1.6rem; font-weight:800; margin-bottom:24px;}
+  .details-section h3{font-size:1.05rem; font-weight:700; margin:24px 0 10px;}
+  .details-section p{color:var(--ink-soft); max-width:74ch; margin:0 0 14px;}
+
+  .collab{
+    margin-top:24px; padding:16px 20px;
+    background:#fff; border:1px solid var(--line); border-radius:12px;
+    font-size:0.9rem; color:var(--ink-soft);
+  }
+
+  footer{padding:36px 0; text-align:center; color:var(--ink-soft); font-size:0.88rem;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="back-link" href="index.html">← Retour au portfolio</a>
+  </div>
+</div>
+
+<div class="wrap title-block">
+  <h1>Planification optimisée des soutenances de stage</h1>
+  <div class="badges">
+    <span class="badge">Optimisation</span>
+    <span class="domain">Domaine : Optimisation algorithmique</span>
+  </div>
+</div>
+
+<div class="wrap grid-2">
+  <div>
+    <h2>Résumé du projet</h2>
+    <p>Chaque année, l'école doit organiser environ 180 soutenances de stage réparties sur plusieurs jours. Chaque soutenance nécessite un créneau horaire, une salle disponible, et un jury de deux enseignants libres au même moment, le tout organisé jusqu'ici de façon largement manuelle, chronophage et sujette à erreurs. Ce projet modélise formellement le problème comme une optimisation combinatoire sous contraintes, et propose une solution logicielle pour générer automatiquement des plannings valides.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://github.com/ndaomothyacine/planification_soutenances" target="_blank" rel="noopener">Voir le code</a>
+      <a class="btn btn-ghost" href="https://planification-soutenances-moth.streamlit.app/" target="_blank" rel="noopener">Voir la démo</a>
+    </div>
+  </div>
+  <div>
+    <h2>Comment ça marche</h2>
+    <div class="steps-visual">
+      <div class="step-row"><div class="step-num">1</div>Étudiants et tuteurs référents (saisie ou import Excel)</div>
+      <div class="step-row"><div class="step-num">2</div>Configuration des salles disponibles</div>
+      <div class="step-row"><div class="step-num">3</div>Durée d'une soutenance</div>
+      <div class="step-row"><div class="step-num">4</div>Liste des co-jurys potentiels</div>
+      <div class="step-row"><div class="step-num">5</div>Choix des dates de soutenance</div>
+      <div class="step-row"><div class="step-num">6</div>Génération des créneaux horaires</div>
+      <div class="step-row"><div class="step-num">7</div>Disponibilités de chaque jury</div>
+      <div class="step-row"><div class="step-num">8</div>Génération automatique du planning optimisé</div>
+    </div>
+  </div>
+</div>
+
+<section class="details-section">
+  <div class="wrap">
+    <h2>Détails du projet</h2>
+
+    <h3>Objectifs du projet</h3>
+    <p>L'objectif est de générer automatiquement les emplois du temps des soutenances de stage, en prenant en compte les disponibilités des enseignants, des étudiants et des salles, tout en cherchant à optimiser l'organisation globale : équilibrage de la charge entre les jurys, minimisation des temps morts, et alternance matin/après-midi.</p>
+
+    <h3>Approche de modélisation et de résolution</h3>
+    <p>La première étape a été de modéliser formellement le problème : ressources, contraintes, et fonctions de coût permettant d'évaluer la qualité d'un planning généré. Une première résolution est tentée avec un algorithme glouton, rapide mais parfois insuffisant sur les cas les plus contraints. Si le taux de réussite est trop faible, un algorithme génétique prend le relais : population de solutions, sélection par tournoi, croisement intelligent et mutation adaptative, guidés par une fonction de fitness qui pénalise les conflits et récompense l'équilibrage des charges et le regroupement des créneaux d'un même jury.</p>
+
+    <h3>Stack technique</h3>
+    <p>Python, Streamlit pour l'interface, Pandas/NumPy pour la manipulation des données, Plotly pour la visualisation du planning et des statistiques, NetworkX pour la gestion des contraintes sous forme de graphes.</p>
+
+    <div class="collab">Projet réalisé en binôme dans le cadre de la formation d'ingénieur à Polytech Lyon.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Moth Yacine NDAO</div>
+</footer>
+
+</body>
+</html>
